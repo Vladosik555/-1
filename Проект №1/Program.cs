@@ -17,18 +17,18 @@ namespace Проект__1
         /// <returns></returns>
         static char[] FileText()
         {
-            string path = Environment.CurrentDirectory + @"\Text.txt";
-            string fileText = File.ReadAllText(path);
-                char[] latters = new char[fileText.Length];
-                for (int i = 0; i < fileText.Length; i++)
-                {
-                    latters[i] = fileText[i];
-                }
-                return latters;
+            string let = Environment.CurrentDirectory.Remove(Environment.CurrentDirectory.Length - 9) + "Text.txt";
+            string fileText = File.ReadAllText(let);
+            char[] latters = new char[fileText.Length];
+            for (int i = 0; i < fileText.Length; i++)
+            {
+                latters[i] = fileText[i];
+            }
+            return latters;
         }
         static List<char> FileText1()
         {
-            string let = Environment.CurrentDirectory + @"\Text.txt";
+            string let = Environment.CurrentDirectory.Remove(Environment.CurrentDirectory.Length - 9) + "Text.txt";
             string fileText = File.ReadAllText(let);
             List<char> latters1 = new List<char>();
             for (int i = 0; i < fileText.Length; i++)
@@ -165,8 +165,8 @@ namespace Проект__1
             Console.WriteLine("Упражнение 6.1");
             Console.WriteLine("Данная прогрмма вычисляет количество гласных и согласных букв");
             char[] chars = FileText();
-            string vowels = "ауоыиэяюёе";
-            string consonants = "бвгджзйклмнпрстфхцчшщьъ";
+            string vowels = "aoeiuy";
+            string consonants = "bcdfghjklmnpqrstvwxyz";
             int count_vow = 0, count_conson = 0;
             for (int i = 0; i < chars.Length; i++)
             {
@@ -239,8 +239,8 @@ namespace Проект__1
             Console.WriteLine("Домашнее задание 6.1");
             Console.WriteLine("Данная программа считает гласные и согласные буквы c List");
             List<char> chars1 = FileText1();
-            string vowels1 = "ауоыиэяюёе";
-            string consonants1 = "бвгджзйклмнпрстфхцчшщьъ";
+            string vowels1 = "aoeiuy";
+            string consonants1 = "bcdfghjklmnpqrstvwxyz";
             int count_vow1 = 0, count_conson1 = 0;
             for (int i = 0; i < chars1.Count; i++)
             {
